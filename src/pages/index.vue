@@ -4,7 +4,7 @@ import { useUserStore } from '@/stores/user'
 const user = useUserStore()
 const name = $ref(user.savedName)
 
-axios.get('/api').then((res) => {
+Promise.allSettled([axios.get('/api/topgames'), axios.get('/api/sellers')]).then((res) => {
   console.log(res)
 })
 
