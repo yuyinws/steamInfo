@@ -1,35 +1,54 @@
-<script setup lang="ts">
-import { toggleDark } from '@/composables'
-
-const { t, availableLocales, locale } = useI18n()
-
-const toggleLocales = () => {
-  // change to some real logic
-  const locales = availableLocales
-  locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
-}
-</script>
-
 <template>
-  <nav text-xl mt-6>
-    <router-link class="icon-btn mx-2" to="/" :title="t('button.home')">
-      <div i-carbon-campsite />
-    </router-link>
-
-    <button class="icon-btn mx-2 !outline-none" :title="t('button.toggle_dark')" @click="toggleDark()">
-      <div i="carbon-sun dark:carbon-moon" />
-    </button>
-
-    <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales">
-      <div i-carbon-language />
-    </a>
-
-    <router-link class="icon-btn mx-2" to="/about" :title="t('button.about')">
-      <div i-carbon-dicom-overlay />
-    </router-link>
-
-    <a class="icon-btn mx-2" rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank" title="GitHub">
-      <div i-carbon-logo-github />
-    </a>
-  </nav>
+  <div absolute bottom-1 w-full>
+    <div divider mb-2 />
+    <div flex justify-around>
+      <div
+        v-for="item in menus"
+        :key="item.name"
+        items-center
+        flex
+        flex-col
+        :class="['pt-1', item.active ? 'text-#467393' : '']"
+        @click="goPage(item.path)"
+      >
+        <div :class="item.icon" />
+        <div text-12px mt-1>
+          {{ item.name }}
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+<script setup lang="ts">
+import type { Ref } from 'vue'
+const router = useRouter()
+const route = useRoute()
+interface MenuItem {
+  name: string
+  path: string
+  icon: string
+  active: boolean
+}
+
+const menus: Ref<MenuItem[]> = ref([
+  { name: '统计数据', path: '/games', icon: 'i-carbon-analytics', active: false },
+  { name: '热销榜', path: '/sellers', icon: 'i-carbon-fire', active: false },
+])
+
+const goPage = (path: string) => {
+  router.push(path)
+}
+
+router.beforeEach((to, from, next) => {
+  menus.value.forEach((item) => {
+    item.active = item.path === to.path
+  })
+  next()
+})
+
+onMounted(() => {
+  menus.value.forEach((item) => {
+    item.active = item.path === route.path
+  })
+})
+</script>
