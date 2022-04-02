@@ -8,8 +8,12 @@ body,
   padding: 0;
 }
 
+html {
+  background: #F3F4F6
+}
+
 html.dark {
-  background: #1b2838;
+  background: #222b30;
 }
 
 #nprogress {

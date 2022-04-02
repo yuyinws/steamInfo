@@ -9,8 +9,15 @@ export default async(req: VercelRequest, res: VercelResponse) => {
 
     })
     const parseString = await xml2js.parseStringPromise(data)
+    let sellers = parseString['rdf:RDF'].item
+    sellers = sellers.map((item: any) => {
+      return {
+        name: item.title[0],
+        appId: item?.link[0].match(/\/app\/(\d+)/)?.[1],
+      }
+    })
     const response = {
-      data: parseString['rdf:RDF'].item,
+      data: sellers,
     }
     res.status(200).json(response)
   }

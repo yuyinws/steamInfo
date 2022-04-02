@@ -4,9 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Counter: typeof import('./components/Counter.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
+    Modal: typeof import('./components/Modal.vue')['default']
+    ModalLayer: typeof import('./components/ModalLayer.vue')['default']
   }
 }
 

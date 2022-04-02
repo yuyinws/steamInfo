@@ -10,10 +10,12 @@ export default async(req: VercelRequest, res: VercelResponse) => {
     const $ = cheerio.load(data)
     const games: any[] = []
     $('#detailStats .player_count_row').each((i, el) => {
+      const href = $(el).find('.gameLink').attr('href')
       games.push({
         current: $(el).find('.currentServers').first().text(),
         peak: $(el).find('.currentServers').last().text(),
         name: $(el).find('.gameLink').text(),
+        href,
       })
     })
     const response = {
