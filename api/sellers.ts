@@ -10,13 +10,14 @@ export default async(req: VercelRequest, res: VercelResponse) => {
     })
     const parseString = await xml2js.parseStringPromise(data)
     let sellers = parseString['rdf:RDF'].item
-    let pubDate = parseString['rdf:RDF'].channel[0].pubDate[0]
+    const pubDate = parseString['rdf:RDF'].channel[0].pubDate[0]
     sellers = sellers.map((item: any) => {
       return {
         name: item.title[0],
         appId: item?.link[0].match(/\/app\/(\d+)/)?.[1] || null,
         subId: item?.link[0].match(/\/sub\/(\d+)/)?.[1] || null,
         content: item['content:encoded'][0].includes('jpg'),
+        link: item?.link[0],
       }
     })
     const response = {
