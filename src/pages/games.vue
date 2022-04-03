@@ -1,10 +1,10 @@
 <template>
-  <div v-if="games.length" flex="~ col gap-3" mb-100px pb-12 pt-12>
+  <div v-if="games.length" flex="~ row gap-3 wrap" mb-100px pb-12 pt-12>
     <div
       v-for="(item, index) in games"
       :key="index"
       rounded-md
-      w-full
+      w-92
       m-auto
       bg-white
       dark:bg-normalDark
