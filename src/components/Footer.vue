@@ -31,8 +31,8 @@ interface MenuItem {
 }
 
 const menus: Ref<MenuItem[]> = ref([
-  { name: '统计数据', path: '/games', icon: 'i-carbon-analytics', active: false },
-  { name: '热销榜', path: '/sellers', icon: 'i-carbon-fire', active: false },
+  { name: '在线人数', path: '/games', icon: 'i-carbon-analytics', active: false },
+  { name: '一周热销', path: '/sellers', icon: 'i-carbon-fire', active: false },
 ])
 
 const goPage = (path: string) => {

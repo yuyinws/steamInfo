@@ -1,4 +1,5 @@
 {
+  "name": "steaminfo",
   "private": true,
   "packageManager": "pnpm@6.32.3",
   "scripts": {
@@ -16,6 +17,7 @@
     "@vueuse/head": "^0.7.5",
     "axios": "^0.26.1",
     "cheerio": "^1.0.0-rc.10",
+    "dayjs": "^1.11.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.12",
     "prism-theme-vars": "^0.2.2",

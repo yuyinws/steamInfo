@@ -18,6 +18,7 @@ specifiers:
   cheerio: ^1.0.0-rc.10
   critters: ^0.0.16
   cross-env: ^7.0.3
+  dayjs: ^1.11.0
   eslint: ^8.11.0
   https-localhost: ^4.7.1
   markdown-it-link-attributes: ^4.0.0
@@ -52,6 +53,7 @@ dependencies:
   '@vueuse/head': 0.7.5_vue@3.2.31
   axios: 0.26.1
   cheerio: 1.0.0-rc.10
+  dayjs: 1.11.0
   nprogress: 0.2.0
   pinia: 2.0.12_typescript@4.6.2+vue@3.2.31
   prism-theme-vars: 0.2.2
@@ -1415,8 +1417,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.2.0-beta.33
-      '@intlify/shared': 9.2.0-beta.33
+      '@intlify/message-compiler': 9.2.0-beta.34
+      '@intlify/shared': 9.2.0-beta.34
       jsonc-eslint-parser: 1.4.1
       source-map: 0.6.1
       vue-i18n: 9.1.9_vue@3.2.31
@@ -1451,11 +1453,11 @@ packages:
       source-map: 0.6.1
     dev: false
 
-  /@intlify/message-compiler/9.2.0-beta.33:
-    resolution: {integrity: sha512-+SICjFlnHSbRLZT+sNdBvOAQfcNX+fESyMmgPxC8HHWu4GLN2CoVQS4ACXb3QBZDKLVJBFhFGMnl+UXyJrno6g==}
+  /@intlify/message-compiler/9.2.0-beta.34:
+    resolution: {integrity: sha512-l7JjkXJBW2l6cFZqPvI6oWU6QZn/i70agU6QB02W1O+6quFCFNpsiPswgYyQrmfHt4F4qYhLJUMZltIW/cqcbw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@intlify/shared': 9.2.0-beta.33
+      '@intlify/shared': 9.2.0-beta.34
       source-map: 0.6.1
     dev: true
 
@@ -1478,8 +1480,8 @@ packages:
     engines: {node: '>= 10'}
     dev: false
 
-  /@intlify/shared/9.2.0-beta.33:
-    resolution: {integrity: sha512-HldlkV66vMt1vQsuUz4zjQ202C5KW6aHeIQhx7RxBO11i3E8V84dp5MG9epr9GZXVsrCAR56Ekj0HaTqksIRJA==}
+  /@intlify/shared/9.2.0-beta.34:
+    resolution: {integrity: sha512-hbUKcVbTOkLVpnlSeZE1OPgEI7FpvhuZF/gb84xECTjXEImIa3u0fIcJKUUffv3dlAx8fMOE5xKgDzngidm0tw==}
     engines: {node: '>= 12'}
     dev: true
 
@@ -1497,7 +1499,7 @@ packages:
         optional: true
     dependencies:
       '@intlify/bundle-utils': 2.2.1_vue-i18n@9.1.9
-      '@intlify/shared': 9.2.0-beta.33
+      '@intlify/shared': 9.2.0-beta.34
       '@rollup/pluginutils': 4.2.0
       debug: 4.3.3
       fast-glob: 3.2.11
@@ -2897,6 +2899,10 @@ packages:
       whatwg-mimetype: 3.0.0
       whatwg-url: 10.0.0
     dev: true
+
+  /dayjs/1.11.0:
+    resolution: {integrity: sha512-JLC809s6Y948/FuCZPm5IX8rRhQwOiyMb2TfVVQEixG7P8Lm/gt5S7yoQZmC8x1UehI9Pb7sksEt4xx14m+7Ug==}
+    dev: false
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}

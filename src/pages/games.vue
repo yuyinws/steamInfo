@@ -1,5 +1,5 @@
 <template>
-  <div flex flex-col gap-3 mb-100px pb-12 pt-12>
+  <div flex="~ col gap-3" mb-100px pb-12 pt-12>
     <div
       v-for="(item, index) in games"
       :key="index"
@@ -11,6 +11,7 @@
       text-12px
       p-2
       active:bg-gray-200
+      class="active:dark:bg-gray-600"
       @click="goToGamePage(item.href)"
     >
       <div flex justify-between>
@@ -22,7 +23,7 @@
             {{ item.name }}
           </div>
         </div>
-        <div i="carbon-trophy-filled" text-16px :class="trophyColor(index)" />
+        <div v-if="index < 3" i="carbon-trophy-filled" text-16px :class="trophyColor(index)" />
       </div>
       <div flex>
         <div text-gary-900 dark:text-white-700>
