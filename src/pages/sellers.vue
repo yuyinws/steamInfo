@@ -1,29 +1,32 @@
 <template>
-  <div v-if="sellers.length" flex="~ col gap-4" mb-100px pb-12 pt-12 p-2>
-    <div v-for="(item, index) in sellers" :key="index" @click="goGamePage(item)">
-      <div
-        flex
-        justify-center
-        w-full
-        bg-white
-        p-2
-        dark:bg-normalDark
-        active:bg-gray-200
-        class="active:dark:bg-gray-600"
-        rounded-t-md
-        text-18px
-        text-gray-400
-      >
-        {{ item.name }}
-      </div>
-      <div flex w-full bg-white rounded-b-md>
-        <img h-40 rounded-b-md w-full h-auto object-fill :src="item._base64">
+  <div v-if="sellers.length" mb-100px pb-12 pt-12 p-2>
+    <div flex="~ row gap-4 wrap" justify-center>
+      <div v-for="(item, index) in sellers" :key="index" @click="goGamePage(item)">
+        <div
+          flex
+          justify-center
+          w-full
+          bg-white
+          p-2
+          dark:bg-normalDark
+          active:bg-gray-200
+          class="active:dark:bg-gray-600"
+          rounded-t-md
+          text-18px
+          text-gray-400
+        >
+          {{ item.name }}
+        </div>
+        <div flex w-full bg-white rounded-b-md>
+          <img rounded-b-md w-120 h-50 object-cover :src="item._base64">
+        </div>
       </div>
     </div>
-    <div text-12px text-center text-gray-400>
+    <div text-12px text-center text-gray-400 mt-5 mb-5>
       更新于 {{ _pubDate }}
     </div>
   </div>
+
   <div
     v-else
     h-full
