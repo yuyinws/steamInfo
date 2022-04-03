@@ -17,10 +17,10 @@
         {{ item.name }}
       </div>
       <div flex w-full bg-white rounded-b-md>
-        <img h-40 rounded-b-md w-full object-fill :src="item._base64">
+        <img h-40 rounded-b-md w-full h-auto object-fill :src="item._base64">
       </div>
     </div>
-    <div text-12px text-center text-gray-300>
+    <div text-12px text-center text-gray-400>
       更新于 {{ _pubDate }}
     </div>
   </div>
