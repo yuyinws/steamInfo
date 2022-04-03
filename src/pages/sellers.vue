@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col gap-4" mb-100px pb-12 pt-12 p-2>
+  <div v-if="sellers.length" flex="~ col gap-4" mb-100px pb-12 pt-12 p-2>
     <div v-for="(item, index) in sellers" :key="index">
       <div flex justify-center w-full bg-white p-2 dark:bg-normalDark rounded-t-md text-18px text-gray-400>
         {{ item.name }}
@@ -17,6 +17,9 @@
     <div text-12px text-center text-gray-300>
       更新于 {{ _pubDate }}
     </div>
+  </div>
+  <div v-else h-full flex justify-center b-0 fixed top-60 left-0 right-0 text-gray-600 dark:text-white-300>
+    暂无数据:(
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <div flex="~ col gap-3" mb-100px pb-12 pt-12>
+  <div v-if="games.length" flex="~ col gap-3" mb-100px pb-12 pt-12>
     <div
       v-for="(item, index) in games"
       :key="index"
@@ -36,6 +36,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div v-else h-full flex justify-center b-0 fixed top-60 left-0 right-0 text-gray-600 dark:text-white-300>
+    暂无数据:(
   </div>
 </template>
 
