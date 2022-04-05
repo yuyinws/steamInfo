@@ -28,7 +28,7 @@
   </div>
 
   <div v-else flex="~ row gap-4 wrap" mb-100px pb-12 pt-12 p-2 justify-center>
-    <Skeletor v-for="item in 10" :key="item" width="30rem" height="12.5rem" rounded-md />
+    <Skeletor v-for="item in 10" :key="item" width="30rem" height="15rem" rounded-md />
   </div>
 </template>
 
