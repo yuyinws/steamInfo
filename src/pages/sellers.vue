@@ -27,20 +27,8 @@
     </div>
   </div>
 
-  <div
-    v-else
-    h-full
-    flex
-    justify-center
-    b-0
-    fixed
-    top-60
-    left-0
-    right-0
-    text-gray-600
-    dark:text-white-300
-  >
-    暂无数据:(
+  <div v-else flex="~ row gap-4 wrap" mb-100px pb-12 pt-12 p-2 justify-center>
+    <Skeletor v-for="item in 10" :key="item" width="30rem" height="12.5rem" rounded-md />
   </div>
 </template>
 
@@ -49,6 +37,7 @@ import type { Ref } from 'vue'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import timezone from 'dayjs/plugin/timezone'
+import { Skeletor } from 'vue-skeletor'
 import { request } from '@/composables'
 
 interface Seller {

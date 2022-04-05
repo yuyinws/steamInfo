@@ -1,11 +1,10 @@
 <template>
-  <div v-if="games.length" flex="~ row gap-3 wrap" mb-100px pb-12 pt-12>
+  <div v-if="games.length" flex="~ row gap-3 wrap" mb-100px pb-12 pt-12 justify-center>
     <div
       v-for="(item, index) in games"
       :key="index"
       rounded-md
       w-92
-      m-auto
       bg-white
       dark:bg-normalDark
       text-12px
@@ -37,13 +36,21 @@
       </div>
     </div>
   </div>
-  <div v-else h-full flex justify-center b-0 fixed top-60 left-0 right-0 text-gray-600 dark:text-white-300>
-    暂无数据:(
+  <div
+    v-else
+    flex="~ row gap-3 wrap"
+    pb-12
+    pt-12
+    rounded-md
+    justify-center
+  >
+    <Skeletor v-for="item in 100" :key="item" width="23rem" height="3rem" rounded-md />
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Ref } from 'vue'
+import { Skeletor } from 'vue-skeletor'
 import { request } from '@/composables'
 
 interface Game {
