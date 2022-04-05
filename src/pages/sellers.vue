@@ -1,5 +1,5 @@
 <template>
-  <div v-if="sellers.length" mb-100px pb-12 pt-12 p-2>
+  <div v-if="sellers.length && sellers[0]._base64" mb-100px pb-12 pt-12 p-2>
     <div flex="~ row gap-4 wrap" justify-center>
       <div v-for="(item, index) in sellers" :key="index" @click="goGamePage(item)">
         <div
