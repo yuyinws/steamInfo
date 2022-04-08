@@ -3,9 +3,7 @@
     <div flex="~ row gap-4 wrap" justify-center>
       <div v-for="(item, index) in sellers" :key="index" w-120 @click="goGamePage(item)">
         <div
-          flex
-          justify-center
-          w-full
+          w-120
           bg-white
           p-2
           dark:bg-normalDark
@@ -14,6 +12,7 @@
           rounded-t-md
           text-18px
           text-gray-400
+          line-clamp-1
         >
           {{ item.name }}
         </div>
