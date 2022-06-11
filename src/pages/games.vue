@@ -1,8 +1,8 @@
 <template>
   <div v-if="games.length" flex="~ row gap-3 wrap" mb-100px pb-12 pt-12 justify-center>
     <div
-      v-for="(item, index) in games" :key="index" rounded-md w-92 bg-white dark:bg-normalDark text-12px p-2
-      active:bg-gray-200 class="active:dark:bg-gray-600" @click="goToGamePage(item.href)"
+      v-for="(item, index) in games" :key="index" v-wave rounded-md w-92 bg-white dark:bg-normalDark text-12px
+      p-2 class="active:dark:bg-gray-600" @click="goToGamePage(item.href)"
     >
       <div flex justify-between>
         <div flex>
